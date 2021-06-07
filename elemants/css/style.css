@@ -1,0 +1,15 @@
+#tran{
+    display: none;
+} 
+.deposit{ 
+    background-color: slateblue;
+}
+.withdraw{
+    background-color: lightsalmon;
+}
+.balance{
+    background-color: orange;
+}
+.rounded-4{
+    border-radius: 10px;
+}
