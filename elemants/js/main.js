@@ -1,9 +1,21 @@
 //login js
 function display(){
+    //pass
+    const passString = document.getElementById("inputPassword").value;
+    const pass = parseFloat(passString);
+    if(passString =="" ){
+        alert("Enter password. Password is 1234");
+    }
+  else if(pass == 1234){
+         //login
     const main = document.getElementById("main");
-   main.style.display = "none";
-    const tran =document.getElementById("tran");
-    tran.style.display = "block";
+    main.style.display = "none";
+     const tran =document.getElementById("tran");
+     tran.style.display = "block";
+    }
+    else{
+        alert("Wrong password. Password is 1234");
+    }
  } 
  document.getElementById("login").addEventListener("click",display);
  // default function 
@@ -12,16 +24,12 @@ function display(){
     const currentNumber = parseFloat(current);
     const totalDepositNumber = currentNumber + depositNumber;  
     document.getElementById(id).innerText = totalDepositNumber;
- }  
- function updateSpan2(id,depositNumber ){ 
-    var current  = document.getElementById(id).innerText; 
-    const currentNumber = parseFloat(current);
-    const totalDepositNumber = currentNumber - depositNumber;  
-    document.getElementById(id).innerText = totalDepositNumber;
- }  
+ }   
  function getInput(id){ 
     const  amount = document.getElementById(id).value;
     const number = parseFloat(amount); 
+    document.getElementById(id).value = "";  
+
     return number;
  }
  // deposit 
@@ -39,7 +47,7 @@ function display(){
      // change value of deposit 
     //  document.getElementById("current-deposit").innerText = totalDepositNumber;
      // set input with empty string 
-     document.getElementById("depositAmount").value = "";
+    //  document.getElementById("depositAmount").value = "";
      // read and change of balance 
     //  const balance = document.getElementById("balance").innerText;
     //  const balanceNumber = parseFloat(balance);
@@ -54,6 +62,6 @@ document.getElementById("withdrawBtn").addEventListener("click",function(){
     console.log(withdrawNumber);
     //withdraw get form html
     updateSpan("withdraw",withdrawNumber); 
-    document.getElementById("withdraw-input").value = "";  
-    updateSpan2("balance",withdrawNumber);
+    // document.getElementById("withdraw-input").value = "";  
+    updateSpan("balance", -1 * withdrawNumber);
 })
