@@ -37,9 +37,7 @@ function display(){
         alert("We can't take negative number so we change this number into positive number");
         document.getElementById(id).value = "";    
         return positiveNum;
-    }
-    
-   
+    } 
  }
  // deposit 
  const depositBtn = document.getElementById("deposit");
