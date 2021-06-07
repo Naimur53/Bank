@@ -32,12 +32,18 @@ function display(){
         document.getElementById(id).value = "";   
         return number;
     }
-    else{
+    else if (number < -1){
         const positiveNum = Math.abs(number); 
         alert("We can't take negative number so we change this number into positive number");
         document.getElementById(id).value = "";    
         return positiveNum;
     } 
+    else {
+        alert("Enter amount not text");
+        document.getElementById(id).value = ""; 
+        const wo = 00;
+        return wo;
+    }
  }
  // deposit 
  const depositBtn = document.getElementById("deposit");
