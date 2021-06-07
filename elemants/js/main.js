@@ -6,7 +6,7 @@ function display(){
     if(passString =="" ){
         alert("Enter password. Password is 1234");
     }
-  else if(pass == 1234){
+    else if(pass == 1234){
          //login
     const main = document.getElementById("main");
     main.style.display = "none";
@@ -21,16 +21,25 @@ function display(){
  // default function 
  function updateSpan(id,depositNumber ){ 
     var current  = document.getElementById(id).innerText; 
-    const currentNumber = parseFloat(current);
+    const currentNumber = parseFloat(current); 
     const totalDepositNumber = currentNumber + depositNumber;  
-    document.getElementById(id).innerText = totalDepositNumber;
+    document.getElementById(id).innerText = totalDepositNumber;  
  }   
  function getInput(id){ 
     const  amount = document.getElementById(id).value;
     const number = parseFloat(amount); 
-    document.getElementById(id).value = "";  
-
-    return number;
+    if( number > -1){
+        document.getElementById(id).value = "";   
+        return number;
+    }
+    else{
+        const positiveNum = Math.abs(number); 
+        alert("We can't take negative number so we change this number into positive number");
+        document.getElementById(id).value = "";    
+        return positiveNum;
+    }
+    
+   
  }
  // deposit 
  const depositBtn = document.getElementById("deposit");
